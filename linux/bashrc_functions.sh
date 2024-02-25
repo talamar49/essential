@@ -68,3 +68,11 @@ function gpush()
     fi
 
 }
+
+function fixtime()
+{
+    timedatectl set-local-rtc 1 --adjust-system-clock
+    sudo apt remove ntp
+    sudo apt install --reinstall systemd-timesyncd
+    sudo dpkg-reconfigure tzdata
+}
