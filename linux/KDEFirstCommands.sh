@@ -262,4 +262,8 @@ gdb ./binfile corefile
 sudo gedit /etc/crontab
 @reboot root echo 90 > /sys/class/power_supply/BAT0/charge_control_end_threshold
 
+#########################################################################3
+#bashrc adds
+source ~/github/linux/bashrc_aliases.sh
+source ~/github/linux/bashrc_functions.sh
 
