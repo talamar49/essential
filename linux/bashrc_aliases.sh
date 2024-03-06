@@ -26,4 +26,6 @@ alias coredump="sudo sysctl -w kernel.core_pattern=core.%p.%s.%c.%d.%P;ulimit -c
 alias gpt-ul="ollama run llama2-uncensored"
 alias gpt-cl="ollama run codellama:13b"
 
-alias nv="~/nvim.appimage"
+alias cmk="make -f ~/github/linux/makefile"
+
+alias dpath="export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH ; echo path to dynamic  lib made here"
