@@ -37,7 +37,8 @@ lib$(name).so: $(name)_d.o
 	$(CC) $(CFLAGS) $(RELEASE) -shared -o lib$(name).so $(name)_d.o
 	rm $(name)_d.o
 
-$(name).out: 
+$(name)_.out: 
+$(name)_test.out: 
 
 $(name).o: $(name).c
 	$(CC) $(CFLAGS) $(RELEASE) $(name).c -I . -c -o $(name).o

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ****************** my functions
-PROMPT_DIRTRIM=5
+PROMPT_DIRTRIM=2
 function s(){
     PROMPT_DIRTRIM=$1
 }
@@ -75,4 +75,12 @@ function fixtime()
     sudo apt remove ntp
     sudo apt install --reinstall systemd-timesyncd
     sudo dpkg-reconfigure tzdata
+}
+
+function loop()
+{
+    while true
+    do 
+        "$@"
+    done 
 }

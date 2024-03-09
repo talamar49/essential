@@ -22,6 +22,7 @@ sudo apt install alsa-base pavucontrol pulseaudio
 
 ## time sync:
 timedatectl set-local-rtc 1
+timedatectl set-local-rtc 1 --adjust-system-clock
 
 # to install timeformat again
 sudo apt remove ntp
