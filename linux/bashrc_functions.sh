@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+# ****************** my startups
+~/github/linux/hebtime $(date +%Y) $(date +%m) $(date +%d) 32.7940 34.9896 $(date +%Z) 0
+
 # ****************** my functions
 PROMPT_DIRTRIM=2
 function s(){
@@ -53,8 +57,8 @@ function gpush()
         return
     fi
 
-    files=$@
-    git add $files
+    files=$1
+    git add $@
     git checkout
     read -p "Do you want to continue? (y/n): " choice
     if [ $choice == "y" ];then
