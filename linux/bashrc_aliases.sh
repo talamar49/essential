@@ -18,7 +18,7 @@ alias mk='make -f'
 alias vlg='valgrind --leak-check=yes --track-origins=yes'
 
 # ***************** my aliases
-alias infinitydir="cd ~/Desktop/Personal/study/infinity_labs/git/ds/"
+alias infinitydir="cd ~/Desktop/Personal/study/infinity_labs/git/; ls"
 alias personaldir="cd ~/Desktop/Personal"
 alias gstat="git status --short"
 alias coredump="sudo sysctl -w kernel.core_pattern=core.%p.%s.%c.%d.%P;ulimit -c unlimited;echo ulimit -c unlimited "

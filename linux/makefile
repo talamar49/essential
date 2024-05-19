@@ -14,6 +14,8 @@ VLGFLAGS=valgrind --leak-check=yes --track-origins=yes -s
 DEBUG=-g
 RELEASE=-DNDEBUG -O3
 
+all: run clean
+
 main:
 	@echo "#include <stdio.h>\n\nint main(void)\n{\n\n\treturn 0;\n}" > ./$(name)_.c
 

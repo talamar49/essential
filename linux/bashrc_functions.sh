@@ -3,6 +3,7 @@
 
 # ****************** my startups
 ~/github/linux/hebtime $(date +%Y) $(date +%m) $(date +%d) 32.7940 34.9896 $(date +%Z) 0
+set -o vi
 
 # ****************** my functions
 PROMPT_DIRTRIM=2
@@ -47,7 +48,7 @@ function gdr9()
 }
 
 
-function gpush()
+function gpush() 
 {
     RED='\033[0;31m'
     NC='\033[0m'
@@ -57,20 +58,21 @@ function gpush()
         return
     fi
 
-    files=$1
-    git add $@
-    git checkout
+    for file in "$@"; do
+        git add "$file"
+    done
+
+    git diff --cached --name-status 
     read -p "Do you want to continue? (y/n): " choice
-    if [ $choice == "y" ];then
-        read -p "Enter messege for commit: " messege
-        git commit -m "$messege"
+    if [ "$choice" == "y" ]; then
+        read -p "Enter message for commit: " message
+        git commit -m "$message"
         git push
     else
-        echo -e "\n${RED}changes are retrived${NC}\n"
+        echo -e "\n${RED}Changes are retrieved status is:${NC}\n"
         git restore --stage .
         git status --short
     fi
-
 }
 
 function fixtime()
@@ -87,4 +89,25 @@ function loop()
     do 
         "$@"
     done 
+}
+
+function labc()
+{
+    filename=$1
+
+    echo '#include <stdio.h>
+
+void Foo()
+{
+
+}
+
+int main()
+{
+    Foo();
+
+    return 0;
+}' > "$filename.c"
+    
+    subl $filename.c
 }
